@@ -1,0 +1,90 @@
+conky.config = {
+own_window = true,
+own_window_type = 'desktop', 
+own_window_transparent = true,
+own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
+own_window_colour = black,
+own_window_class= 'Conky',
+own_window_title= 'dwm info',
+minimum_width = 270, 
+maximum_width = 270,
+gap_x = 45,	
+gap_y =20,	
+alignment = 'middle_right',
+use_xft = true,
+font = 'roboto:size=9',
+xftalpha = 1,
+override_utf8_locale = true,
+uppercase = false,
+draw_shades = false,
+default_shade_color = '000000',
+draw_outline = false,
+default_outline_color = '000000',
+default_color = '888888',
+color2='888888',
+color3='ffffff',
+draw_borders = true,
+stippled_borders = 0,
+border_inner_margin = 5,
+border_outer_margin = 0,
+border_width = 2,
+draw_graph_borders = false,
+background = true,
+background_color= '000000',
+use_spacer = 'none',
+text_buffer_size = 6144,
+no_buffers = true,
+short_units = true,
+pad_percents =  2,
+imlib_cache_size = 0,
+double_buffer = true,
+}
+conky.text = [[
+
+${font roboto:size=14}${color3}${alignc} Crunchbang++ 
+${font roboto:size=8}${color2}${alignc}Debian 12 Bookworm
+
+${hr}
+${voffset 4} ${font roboto:size=11}${alignc}INFO${font}
+
+Kernel:$alignr${kernel}
+Uptime:$alignr${uptime}
+Ram:$alignr${memgraph 10,60 000000 BF616A -l} $mem/$memmax
+Swap:$alignr${memgraph 10,60 000000 A3BE8C -l} $swap/$swapmax
+Loadavg: $alignr${loadgraph 10,60 000000 EBCB8B -l} ${loadavg}
+Network Ip: $alignr${addr enp34s0}${font}
+Root:$alignr${fs_used /}/${fs_size /}
+
+${hr}
+${voffset 4}                 ${hwmon 0 temp 1}°C      ${font roboto:size=11}${alignc}CPU${font}     ${cpu cpu0}%
+
+Core1     ${template2}${cpu cpu1}%     ${template3}${cpubar cpu1}
+Core2     ${template2}${cpu cpu2}%     ${template3}${cpubar cpu2}
+Core3     ${template2}${cpu cpu3}%     ${template3}${cpubar cpu3}
+Core4     ${template2}${cpu cpu4}%     ${template3}${cpubar cpu4} 
+
+${hr}
+${voffset 4} ${font roboto:size=11}${alignc}PROCESSES${font}
+
+${font roboto:size=8}Top Processes ${alignr} PID    CPU%    MEM%
+
+${top name 1} $alignr ${top pid 1} ${top cpu 1}% ${top mem 1}%
+${top name 2} $alignr ${top pid 2} ${top cpu 2}% ${top mem 2}%
+${top name 3} $alignr ${top pid 3} ${top cpu 3}% ${top mem 3}%
+${top name 4} $alignr ${top pid 4} ${top cpu 4}% ${top mem 4}%
+${top name 5} $alignr ${top pid 5} ${top cpu 5}% ${top mem 5}%
+${top name 6} $alignr ${top pid 6} ${top cpu 6}% ${top mem 6}%
+${top name 7} $alignr ${top pid 7} ${top cpu 7}% ${top mem 7}%
+${top name 8} $alignr ${top pid 8} ${top cpu 8}% ${top mem 8}%
+${top name 9} $alignr ${top pid 9} ${top cpu 9}% ${top mem 9}%
+${top name 10} $alignr ${top pid 10} ${top cpu 10}% ${top mem 10}%
+
+${hr}
+
+
+${font roboto:size=10}${alignc}${time %A},${time %d} ${time %B} ${time %Y}${font}
+
+${font roboto:size=18}${color3}${alignc}${time %H}:${time %M}${time %p}${font}
+
+
+]];
